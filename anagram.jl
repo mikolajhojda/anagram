@@ -1,7 +1,4 @@
 
-x = 2
-println(x)
-
 function is_anagram(x::String,y::String)
         xa = collect(x)
         ya = collect(y)
