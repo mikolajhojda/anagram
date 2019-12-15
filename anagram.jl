@@ -1,4 +1,6 @@
 
+
+
 function is_anagram(x::String,y::String)
         xa = collect(x)
         ya = collect(y)
@@ -40,21 +42,21 @@ function download_words(data)
     end
 end
 
-function find_anagrams(anagram, words)
+function find_anagrams(anagram, word)
     count = 1
-    array = String[]
-    for i=1:length(lines)
-        if is_anagram(anagram, lines[i]) == true
-           array[count] = lines[i]
+    array = Array{String}(undef, length(word))
+    for i=1:length(word)
+        if is_anagram(anagram, word[i]) == true
+            array[count] = word[i]
             count = count+1
         end
     end
-    return array
+    return array[1:count-1]
 end
 
 words = download_words("words.txt")
-println(find_anagrams("iceman", words)
-
+println(find_anagrams("iceman", words))
+end
 
 
 
