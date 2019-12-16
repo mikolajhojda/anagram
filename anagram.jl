@@ -54,9 +54,12 @@ function find_anagrams(anagram, word)
     return array[1:count-1]
 end
 
-words = download_words("words.txt")
+url = "http://raw.githubusercontent.com/tk3369/words/master/words.txt"
+filename = "data.txt"
+download(url, filename)
+words = download_words("data.txt")
 println(find_anagrams("iceman", words))
-end
+
 
 
 
