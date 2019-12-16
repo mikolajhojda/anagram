@@ -43,15 +43,13 @@ function download_words(data)
 end
 
 function find_anagrams(anagram, word)
-    count = 1
-    array = Array{String}(undef, length(word))
+    array = String[]
     for i=1:length(word)
         if is_anagram(anagram, word[i]) == true
-            array[count] = word[i]
-            count = count+1
+            push!(array, word[i])
         end
     end
-    return array[1:count-1]
+    return array
 end
 
 url = "http://raw.githubusercontent.com/tk3369/words/master/words.txt"
